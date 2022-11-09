@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firstscript</title>
+
+    <!-- <script src="myscript3.js"></script> -->
+
+   
+    <script>
+        //document.write("환영합니다."); // <body>브라우저 화면에 결과를 출력하는 역할
+        // 문자
+        // 숫자
+        // 날짜
+        // 논리형
+        var age;
+        age = 10;
+        document.write(age);
+        document.write("<br>"); //줄바꿈 문장
+
+        age = 20;
+        document.write(age + "<br>");  //출력과 줄바꿈이 동시에 일어나는 문장
+
+        age = "Hello";         //Var 형식은 타입체크를 하지 않는다.
+        document.write(age);
+        document.write("<br>");
+
+        var age = "안녕";      //같은 이름으로 변수를 여러번 선언이 가능하다.
+        document.write(age + "<br>");
+
+        var name;              //undefined : 아무값도 찍히지 않음 변수 name의 값이 없기 때문에
+        document.write(name + "<br>");
+
+        name = "홍길동";       //Var 선언된 변수의 hoisting(호이스팅) : 출력을 안했음에도 새로고침하면 값이 나오는 경우 
+        name = '이순신';       //따옴표 쌍/홑 안가림.  / 변수는 대소문자 구분함.(***자바스크립트 특성***)
+
+        //ES6
+        //var,let,cont
+
+        let num;
+        num = 1;
+        document.write(num + '<br>');
+
+        num = 100;
+        document.write(num + '<br>');
+
+        num = '홍길동';
+        document.write(num + '<br>');
+
+        let num2;              //같은 이름의 변수는 선언할 수 없다.
+        num2 = 1000;
+        document.write(num2 + '<br>');
+                   
+
+
+    </script>
+
+</head>
+<body>
+    <!-- <button type="button" onclick="javascript:alert('HelloWorld!!');">경고창 실행</button> -->
+
+</body>
+</html>

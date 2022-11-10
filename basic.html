@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic</title>
+    <style>
+        .blue {
+            color: blue;
+        }
+        .red {
+            color: red;
+            font-size: 20px;
+        }
+
+        /* test style */
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .odd{
+            background-color: gainsboro;
+        }
+        .even {
+            background-color: rgb(250, 249, 246);
+        }
+
+    </style>
+    <script>
+        // let num1 = 10;
+        // let num2 = 20;
+        // let name = "홍길동";
+        // let age = 20;
+
+        // document.write("이름 : " + name + " , 나이 : " + age + "<br>");작업
+
+        // document.write("num1 + num2 = " + (num1 + num2) + "<br>");
+
+        // let str = "<table border='1'>"
+        // str += "<tr>";
+        // str +="<td>1</td><td>2</td><td>3</td>";
+        // str +="</tr>";
+        // str +="</table>";
+        // document.write(str + '<br>');
+
+        // test
+        // let height = 180;
+        // let weight = 74;
+        // let aver = (height-100) * 0.9 ;
+        
+
+        // document.write("신장 : " + height + "(cm)" + '<br>');
+        // document.write("체중 : " + weight + "(kg)" + '<br>');
+        // document.write("적정 체중 : (" + height + "-100)" +  " x 0.9 = " + aver + "(kg)" + '<br>');
+        // document.write("결과 : 적정 체중은 " + aver + "kg 이며, 현재 적정 체중에서 " + (weight-aver) + "kg 초과한 것을 알 수 있습니다.");
+
+
+        // 입력 폼 prompt 활용하기
+        // let height = prompt("키를 입력하세요","0");
+        // let weight = prompt("몸무게를 입력하세요","0");
+        // let aver = (height-100) * 0.9 ;
+        // document.write("결과 : 적정 체중은 " + aver + "kg 이며, 현재 적정 체중에서 " + (weight-aver) + "kg 초과한 것을 알 수 있습니다.");
+
+        // p58.
+        // Q1.
+        // var price1 = 3000;
+        // var price2 = 6000;
+        // var price3 = 3000;
+        // var price = (price1 + price2 + price3);
+        // var day = 10000;
+        // var over = (price1 + price2 + price3)-10000
+
+        // var result = price > day ? over +"원 초과"  : "돈 관리 잘했어요!";
+        // document.write(result);
+
+        // Q2.
+        // let s1 = 1200;
+        // let s2 = 1300;
+        // let s3 = 1000;
+        // let aver = (s1 + s2 + s3)/3;
+        // let s4 = prompt("4분기 판매량을 입력하세요","0");
+
+        // let result = s4 >= aver ? "판매량이 평균 이상입니다." : "판매량이 평균 미달입니다.";
+        // document.write(result);
+
+
+        // 조건식
+        // 0 이면 false 나머지 값은 모두 true
+        // null 이면 false
+        // " "이면 false 나머지 값은 모두 true
+        // undefined 이면 false
+
+        // let num = 3;
+        // if(num) {  //true
+        //     document.write(num); 
+        // }  //3
+
+        // let num = 0;
+        // if(num) {   //false
+        //     document.write(num); 
+        // }
+
+        // if("hello") {
+        //     document.write("Hello World!!");
+        // }  //Hello World!!
+
+
+        // else문
+        // var num = prompt("당신이 좋아하는 숫자는?" ,"0");
+        
+        // if(num%2 == 0){
+        //     document.write("당 좋 짝");
+        // }else{
+        //     document.write("당 좋 홀");
+        // }
+
+
+        // confirm() 메서드
+        // var result = confirm("정말로 회원탈퇴를 진행 하시겠습니까?");
+
+        // if(result){
+        //     document.write("탈퇴 처리되었습니다.");
+        // }else{
+        //     document.write("탈퇴 취소되었습니다.");
+        // }
+
+
+        // switch-break문
+        // let site = prompt("네이버,다음,네이트,구글 중 즐겨 사용하는 사이트는?" , " ");
+        // switch(site){
+        //     case"구글" : url = "www.google.com";
+        //     break;
+        //     case"다음" : url = "www.daum.net";
+        //     break;
+        //     case"네이버" : url = "www.naver.com";
+        //     break;
+        //     case"네이트" : url = "www.nate.com";
+        //     break;
+        //     default : alert("보기 중에 없는 사이트 입니다..");
+        // }
+
+        // if(url){
+        //     location.href = "http://" + url;
+        // }
+
+
+        // for, while, do-while
+        // 변수
+        // while(변수로 조건식){
+        //     실행문
+        //     변수를 사용한 증감식
+        // }
+
+        // let i = 30;
+        // while(i>=10){
+        //     if(i % 2 ==0){
+        //         document.write("<p class='blue'>"+i+"</p>");
+        //     }else{
+        //         document.write("<p class='red'>"+i+"</p>");
+        //     }i--;
+        // }
+
+        // var i=10;
+        // do{
+        //     document.write("hello!");
+        // }while(i<3)
+        
+        // p84.
+        // var i = 1;
+        // while(i<10){
+        //     document.write("5 X " + i + " = " + i*5 ,"<br>");
+        //     i++;
+        // }
+
+        // p85.
+        // var num = 1;
+        // var t="<table border = 1>";
+        
+        // for(var i=1;i<=5;i++){
+        //     t += "<tr>";
+        //     for (var j=1;j<=5;j++){
+        //         if(i % 2 ==1){
+        //             t += "<td class = 'blue'>" + num + "</td>";
+        //         }else{
+        //             t += "<td class = 'red'>" + num + "</td>";
+        //         }    
+        //         // t += "<td>" + num + "</td>";
+        //         num++;
+        //     }
+        //     t += "</tr>";
+        // }
+        // t += "</table>";
+        // console.log(t);
+        // document.write(t);
+
+        // test
+        // basic ver.
+        document.write("<h1>구구단 표</h1>");
+
+        document.write("<table border = 1>");
+
+        for(var i=1;i<=9;i++){
+            document.write("<tr>");
+            for (var j=1; j <= 9; j++) {
+                document.write("<td>" + i * j + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+        
+        // style ver.
+        document.write("<h1>구구단 표</h1>");
+
+        document.write("<table width = 50%>");
+
+        for(var i=1;i<=9;i++){
+            if(i % 2 == 1){
+                document.write("<tr class = 'odd'>");
+            }else{
+                document.write("<tr class = 'even'>");
+            }
+            for (var j=1; j <= 9; j++) {
+                document.write("<td>" + i * j + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+    <script>
+        // let today = new Date();  //속성, 기능
+        // document.write(today.getFullYear() + "<br>");  //2022
+        // document.write(today.getMonth()+ 1 + "<br>");  //0~11 11월
+        // document.write(today.getDate()+ "<br>");//10일
+        // document.write(today.getDay()+ "<br>"); //0~6 1주일
+
+        // let day = today.getDay();
+        // switch(day){
+        //     case 0:document.write("일요일");
+        //     break;
+        //     case 1:document.write("월요일");
+        //     break;
+        //     case 2:document.write("화요일");
+        //     break;
+        //     case 3:document.write("수요일");
+        //     break;
+        //     case 4:document.write("목요일");
+        //     break;
+        //     case 5:document.write("금요일");
+        //     break;
+        //     case 6:document.write("토요일");
+        //     break;
+        // }
+
+        // document.write("<br>=====================================================<br>");
+
+        // today.setFullYear(2000);
+        // today.setMonth(0);
+        // today.setDate(1);
+
+        // document.write(today.getFullYear() + "<br>");
+        // document.write(today.getMonth()+ 1 + "<br>");  
+        // document.write(today.getDate()+ "<br>");
+        // document.write(today.getDay()+ "<br>"); 
+
+        // day = today.getDay();
+        
+        // switch(day){
+        //     case 0:document.write("일요일");
+        //     break;
+        //     case 1:document.write("월요일");
+        //     break;
+        //     case 2:document.write("화요일");
+        //     break;
+        //     case 3:document.write("수요일");
+        //     break;
+        //     case 4:document.write("목요일");
+        //     break;
+        //     case 5:document.write("금요일");
+        //     break;
+        //     case 6:document.write("토요일");
+        //     break;
+        // }
+        // document.write("<br>=====================================================<br>");
+
+        // let start = new Date(2020,7,1);
+
+        // document.write(start.getFullYear() + "<br>");
+        // document.write(start.getMonth()+ 1 + "<br>");  
+        // document.write(start.getDate()+ "<br>");
+        // document.write(start.getDay()+ "<br>"); 
+
+
+        // 오늘부터 연말까지 남은 날짜 구하기
+        // var today = new Date();
+        // var nowYear = today.getFullYear();
+
+        // var theDate = new Date(nowYear,11,31);
+        // var diffDate = theDate.getTime() - today.getTime();
+
+        // var result = Math.ceil(diffDate/(60*1000*60*24));
+        // document.write("<h1>오늘부터 올해 연말까지 남은 날짜</h1>");
+        // document.write("연말 D-day : " + result + "일 남았습니다.");
+
+        // Math 객체
+        // Math.abs()  //숫자의 절댓값 반환
+        // Math.floor()  //소수점 첫째자리에서 무조건 내림하여 정수를 반환
+        // ...
+
+        // (int)(Math.random() * 10) + 1  // 1~10까지의 랜덤 난수
+        // p97.
+        // for (let i=1;i<=10;i++){
+        //     let ran = Math.floor(Math.random() * 10) + 1;
+        //     document.write(ran + "<br>");
+        // }
+
+
+        // 가위바위보 게임 만들기
+        document.write("<h1>1.가위 2.바위 3.보 게임</h1>");
+
+        let me = prompt("숫자입력","");
+        
+        let com = Math.floor(Math.random() * 3) + 1;
+
+        document.write("<img src=\"img/" + com + ".jpg\">");
+        document.write("<img src=\"img/" + me + ".jpg\">" + "<br>");
+
+        if(com == me){
+            document.write("<h3>tie</h3>");
+        }else if(com > me){
+            document.write("<h3>you lose</h3>");
+        }else{
+            document.write("<h3>you win</h3>");
+        }
+
+        // 자바스크립트의 동적 데이터처리를 볼 수 있다
+        
+        
+
+
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

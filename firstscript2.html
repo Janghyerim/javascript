@@ -15,6 +15,8 @@
         // 숫자
         // 날짜
         // 논리형
+        // 객체
+
         var age;
         age = 10;
         document.write(age);
@@ -37,7 +39,18 @@
         name = '이순신';       //따옴표 쌍/홑 안가림.  / 변수는 대소문자 구분함.(***자바스크립트 특성***)
 
         //ES6
-        //var,let,cont
+        //var,let,const
+
+        // var : 
+        // 1.같은 이름으로 변수 선언가능
+        // 2.호이스팅 가능
+        // 3.전역변수
+
+        // let : 
+        // 1.같은 이름으로 변수 선언불가
+        // 2.호이스팅 불가
+        // 3.블록레벨 스코프 (지역변수)
+
 
         let num;
         num = 1;
@@ -52,8 +65,24 @@
         let num2;              //같은 이름의 변수는 선언할 수 없다.
         num2 = 1000;
         document.write(num2 + '<br>');
-                   
 
+        var x = 1;
+        if(true) {
+            var x = 5;
+        }
+        document.write(x + '<br>');  //5
+
+        let y = 1;
+        if(true){
+            let y = 5;
+        }
+        document.write(y + '<br>');  //1
+
+        // const name = 'hong';  
+        // document.write(name + '<br>');
+
+        // name = 'kim';       //error
+        // document.write(name + '<br>');
 
     </script>
 

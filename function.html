@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <script>
+        // 함수
+        // function으로 선언된 함수는 호이스팅이 되어진다.
+        // function 함수명(매개변수1,.....){
+        //     실행문;
+        //     return 리턴값;
+        // };
+
+        // let a2 = add(5,8);  //함수의 호이스팅
+        // console.log(a2);
+
+        // // 함수의 선언
+        // function add (x,y){
+        //     return x + y;
+        // };
+
+        // let a = add(10,20);
+        // console.log(a);
+
+        // 함수의 표현식(익명함수) 
+        // 호이스팅이 불가하다
+        // add(5,8);  => error
+       
+        // let add = function(x,y){
+        //     return x + y;
+        // }
+
+        // let a = add(10,20);
+        // console.log(a);
+
+        // 생성자 함수
+        // let add = new Function('x','y','return x + y')
+        // let a = add(10,20);
+        // console.log(a);
+
+        // 화살표 함수
+        // let add = (x,y) => x + y;  //출력함수가 아니면 모두 return이 생략 된거다.
+        // let a = add (10,20);
+        // console.log(a);
+
+        // p.134
+        let color = ["white","yellow","aqua","purple"];
+        let i = 0;
+        function changeColor(){
+            i++;
+            if(i>=color.length){
+                i = 0;
+            }
+
+            // document.getElementById() 태그를 객체형태로 가져오는 역할
+            let bodyTag = document.getElementById("theBody");
+            // 객체(태그)에 css 효과를 적용한다.
+            // 객체.style.스타일 속성
+            // bodyTag.style.backgroundColor : 하이픈 빼고 컬러는 대문자로 시작하여 작성한다.
+            bodyTag.style.backgroundColor = color[i];
+        }
+
+    </script>
+</head>
+<body id="theBody">
+    <button onclick="changeColor();">배경색 바꾸기</button>
+    
+</body>
+</html>

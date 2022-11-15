@@ -69,12 +69,24 @@
         // javascript
         // if(문자 == 문자)
 
+        // 1번 방식
         // function sum(){
         //     let sum = arguments[0]+arguments[1]+arguments[2];
         //     document.write(sum + "<br>");
         // }
         // sum(10,20,30);
 
+        // 2번 방식
+        // let sum1 = 0;
+        // function sum(...number){
+        //     for(let i=0;i<number.length;i++){
+        //         sum1 +=number[i];
+        //     }
+        //     document.write(sum1);
+        // }
+        // sum(10,20,30);
+
+        // 3번 방식
         // let sum1 = 0;
         // function sum(){
         //     for(let i=0;i<arguments.length;i++){
@@ -84,24 +96,48 @@
         // }
         // sum(10,20,30,40,50);
 
+
         // parseInt(prompt())
         // Number(prompt())
 
-
         // p.140 문제
-        function testAvg(arrData){
-            let sum = 0;
-            for(let i=0;i<arrData.length;i++){
-                sum += Number(prompt(arrData[i] + "점수는?" , "0"));
-            }
-            let avg = sum/arrData.length;
-            return avg;
-        }
+        // function testAvg(arrData){
+        //     let sum = 0;
+        //     for(let i=0;i<arrData.length;i++){
+        //         sum += Number(prompt(arrData[i] + "점수는?" , "0"));
+        //     }
+        //     let avg = sum/arrData.length;
+        //     return avg;
+        // }
 
-        let arrSubject = ["국어","수학"];
-        let result = testAvg(arrSubject);
+        // let arrSubject = ["국어","수학"];
+        // let result = testAvg(arrSubject);
 
-        document.write("평균 점수는 " + result + "점 입니다.");
+        // document.write("평균 점수는 " + result + "점 입니다.");
+
+        // 즉시 실행 함수 (자동 호출 함수)
+        // 일회용 함수 (function(){}());
+        // x에 2를 대입하고 그 밑에 실행문 연산 후 출력
+        
+        // 1번 예제
+        (function(x){
+            console.log(x*x);
+        }(2));  //마지막 괄호안에 ()작성
+
+        // 2번 예제
+        (mySquare = function(x){
+            console.log(x*x);
+        })(3);  //마지막 괄호밖에 ()작성
+  
+        mySquare(4);
+
+        // 3번 예제
+        var mySquare = (function(x){
+            return x*x;
+        })(5);
+
+        console.log(mySquare);
+
 
     </script>
 </head>

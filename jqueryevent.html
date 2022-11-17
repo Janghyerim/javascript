@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqueryevent</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        // 7강 7-1
+         $(function(){
+            // $("#btn").click(function(){
+            //     console.log(btn);
+            // });
+
+            // --------------------------------------------------------------
+
+            // 단독이벤트 등록과 그룹이벤트 등록
+            // 그룹이벤트 등록시에 on() 메소드 사용해야 함.
+
+            // $(".btn1").click(function(){
+            //     $(".btn1").parent().next().css({"color":"red"}); 
+            // });  //사용자가 버튼1을 클릭하면, <p>내용1</p>의 글자색을 빨간색으로 변경한다.
+
+            // $(".btn2").on({
+            //     "mouseover focus":function(){
+            //         $(".btn2").parent().next().css({"color":"green"});
+            //     }, //사용자가 버튼2에 포인터를 올리거나 포커스 이동시에 <p>내용2</p>의 글자를 초록색으로 변경한다
+
+            //     "mouseout blur":function(){
+            //         $(".btn2").parent().next().css({"color":"black"});
+            //     }, //사용자가 버튼2에서 다른요소로 포인터를 올리거나 포커스 이동시에 <p>내용2</p>의 글자를 검은색으로 변경한다
+            // });
+
+            // $(".btn1").off("click");
+            // $(".btn2").off("mouseover focus"); //이벤트 강제종료 제거 메소드
+
+            // --------------------------------------------------------------
+
+            // <a>,<form>태그 click 이벤트 적용시 기본 이벤트 속성을 제거해야한다
+
+            // $(".btn1").on("click",function(e){
+            //     e.preventDefault();  //<a>요소에 링크된 페이지로 이동하는 기본 이벤트를 차단한다
+            //     $(".txt1").css({"background-color":"orange"});
+            //     // return false; 
+            // });
+
+            // $(".btn2").on("click",function(e){
+            //     $(".txt2").css({"background-color":"yellow"}); //글자색이 변경되며,링크된 페이지로 이동
+            //     // return false;  // 무조건 써야 하는가?
+            // });
+
+            // $(".btn3").on("dblclick",function(){
+            //     $(".txt3").css({"background-color":"green"}); //더블클릭 하면 글자색 변경
+            // });
+
+            // $(".btn1").off("click");
+            // $(".btn2").off("click");
+            // $(".btn3").off("dblclick");  //이벤트 강제종료 제거 메소드
+
+            // --------------------------------------------------------------
+
+            // mouseover(), mouseout(), hover() : 정확히 포커싱을 해줘야 한다
+            // hover() = mouseover() + mouseout() 합친 것
+            // mouseenter(), mouseleave() : 부모영역 까지만 가도 이벤트가 발생한다
+
+            // $(".btn1").on({
+            //    "mouseover":function(){
+            //     $(".txt1").css({"background-color":"yellow"});
+            //    },
+            //    "mouseout":function(){
+            //     $(".txt1").css({"background-color":"black"});
+            //    }
+            // });
+
+            // $(".btn2").hover(
+            //     function(){  //over
+            //         $(".txt2").css({"background-color":"aqua"});
+            //     },
+            //     function(){  //out
+            //         $(".txt2").css({"background-color":"black"});
+            //     }
+            // );
+
+            // --------------------------------------------------------------
+        
+            // mousemove() : 이벤트 발생 시에 마우스포인터의 좌푯값을 각각 <span>태그에 출력된다
+
+            // $(document).on("mousemove",function(e){  //매개변수 : e (이벤트 객체)
+            //     $(".posX").text(e.pageX);
+            //     $(".posY").text(e.pageY);
+
+            //     // text()
+            //     // val()                                        
+            // });
+
+            // --------------------------------------------------------------
+
+            // scroll()
+
+            // $(window).on("scroll", function(){
+            //     let sc_top = $(this).scrollTop(); // let sc_top = $(window).scrollTop(); 으로도 가능
+            //     let sc_left = $(this).scrollLeft(); // let sc_left = $(window).scrollLift(); 으로도 가능
+
+            //     $(".top").text(sc_top);
+            //     $(".left").text(sc_left);
+
+            //     if(sc_top <= 200){
+            //         $("body").css("background-color", "red");
+            //     }else if (sc_top <= 500){
+            //         $("body").css("background-color", "yellow");
+            //     }else if (sc_top <= 1000){
+            //         $("body").css("background-color", "pink");
+            //     }
+            // });
+
+            // --------------------------------------------------------------
+
+            // focus(), blur(), focusin(), focusout()
+
+            // $("#user_id_1, #user_pw_1").on("focus",function(){
+            //     $(this).css({"background-color":"pink"});
+            // });
+
+            // $("#user_id_1, #user_pw_1").on("blur",function(){
+            //     $(this).css({"background-color":"grey"});
+            // });  //포커스가 입력요소로 이동하면 배경색은 핑크로 변경하고 다른요소로 넘어가면 다시 회색으로 바뀐다 
+
+
+            // $("#frm_2").on("focusin",function(){
+            //     $(this).css({"background-color":"pink"});
+            // });
+
+            // $("#frm_2").on("focusout",function(){
+            //     $(this).css({"background-color":"grey"});
+            // });  //포커스가 이벤트 대상요소에서 입력요소로 이동하면 이벤트가 발생한 요소의 배경이 핑크로 변경된다
+
+            // --------------------------------------------------------------
+
+            //**************************중요!! 많이 사용함**************************
+            // change() : 선택한 폼 요소의 값을 새 값으로 바꾼다 그리고 포커스가 다른요소로 이동하면 이벤트를 발생시킨다
+            // blur() 이벤트가 발생하는 순간 change() 이벤트가 발생하는 것
+
+            // $("#rel_site").on("change",function(){
+            //     $(".txt").text($(this).val());
+            // });
+
+            // $("#id").on("change",function(){
+            //     $(".txt").text($(this).val());
+            // });
+
+            // --------------------------------------------------------------
+
+            // keydown(), keyup(), keypress()
+
+            // let words = ["돈","부자","천재"];
+
+            // $("#id").on("keydown",function(){
+            //     let term = $(this).val();
+            //     $(".txt").text(term);
+
+            //     for(let i=0;i<3;i++){
+            //         if(term == words[i]){
+            //             $(".txt").text("사용이 불가한 단어 입니다.");
+            //         }
+            //     }
+            // });
+         
+
+
+
+         });
+    </script>
+    <style>
+        /* body{
+            height: 10000px;
+            width: 5000px;
+        }
+        #wrap{
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        } */
+    </style>
+</head>
+<body>
+    <!-- <button id="btn">버튼</button> -->
+
+    <!-- -------------------------------------------------------------- -->
+    
+    <!-- p.250 -->
+    <!-- <p>
+        <button class="btn1">버튼1</button>
+    </p>
+    <p>내용1</p>
+    <p>
+        <button class="btn2">버튼2</button>
+    </p>
+    <p>내용2</p> -->
+
+    <!-- -------------------------------------------------------------- -->
+
+    <!-- <p>
+        <a href="http://www.easyspub.co.kr/" class="btn1">버튼1</a>
+    </p>
+    <p class="txt1">내용1</p>
+    <p>
+        <a href="http://www.easyspub.co.kr/" class="btn2">버튼2</a>
+    </p>
+    <p class="txt2">내용2</p>
+    <p>
+        <button class="btn3">버튼3</button>
+    </p>
+    <p class="txt3">내용3</p> -->
+
+    <!-- -------------------------------------------------------------- -->
+
+    <!-- p.259 -->
+    <!-- <p>
+        <button class="btn1">Mouse Over/Mouse Out</button>
+    </p>
+    <p class="txt1">내용1</p>
+    <p>
+        <button class="btn2">Hover</button>
+    </p>
+    <p class="txt2">내용2</p> -->
+
+    <!-- -------------------------------------------------------------- -->
+
+    <!-- p.262 -->
+    <!-- <h1>mousemove</h1>
+    <p> X : <span class="posX">0</span>px</p>
+    <p> Y : <span class="posY">0</span>px</p> -->
+
+    <!-- -------------------------------------------------------------- -->
+
+    <!-- p.264 -->
+    <!-- <div id="wrap">
+        <p> scrollTop : <span class="top">0</span>px</p>
+        <p> scrollLeft : <span class="left">0</span>px</p>
+    </div> -->
+
+    <!-- -------------------------------------------------------------- -->
+
+    <!-- p.267 -->
+    <!-- <h1>focus / blur</h1>
+    <form action="#">
+        <p>
+            <label for="user_id_1">ID</label> <input type="text" name="user_id_1" id="user_id_1">
+        </p>
+        <p>
+            <label for="user_pw_1">PW</label> <input type="password" name="user_pw_1" id="user_pw_1">
+        </p>
+    </form>
+
+    <h1>focusin / focusout</h1>
+    <form action="#" id="frm_2">
+        <p>
+            <label for="user_id_2">ID</label> <input type="text" name="user_id_2">
+        </p>
+        <p>
+            <label for="user_pw_2">PW</label> <input type="password" name="user_pw_2" id="user_pw_2">
+        </p>
+    </form> -->
+
+    <!-- -------------------------------------------------------------- -->
+
+    <!--************* p.271 *************-->  
+    <!-- <input type="text" name="id" id="id">
+    <br>
+    <select id="rel_site">
+        <option value="">사이트 선택</option>
+        <option value="www.google.com">구글</option>
+        <option value="www.naver.com">네이버</option>
+        <option value="www.daum.net">다음</option>
+    </select>
+    <p class="txt"></p> -->
+
+    <!-- -------------------------------------------------------------- -->
+
+    <!-- p.273 -->
+    <!-- <h1>금지어 필터링</h1>
+    <label>답글 : </label> 
+    <input type="text" name="id" id="id">
+    <p class="txt"></p> -->
+
+
+
+
+    
+
+
+</body>
+</html>

@@ -9,52 +9,87 @@
     <script>
         $(function(){
             // fadeTo()
-            $(".btn2").hide();
+            // $(".btn2").hide();
 
-            $(".btn1").on("click",function(){
-                $(".box").slideUp(1000,"linear",function(){  //시간 , 가속도 , 콜백함수
-                    $(".btn1").hide();
-                    $(".btn2").show();
-                });      
-            });
+            // $(".btn1").on("click",function(){
+            //     $(".box").slideUp(1000,"linear",function(){  //시간 , 가속도 , 콜백함수
+            //         $(".btn1").hide();
+            //         $(".btn2").show();
+            //     });      
+            // });
 
             //slideUp 버튼을 클릭하면 class값이 box인 요소가 위로 접히며 숨겨진다. 그 다음 콜백함수가 실행되어
             //slideUp 버튼이 숨겨지고 fadeIn 버튼이 나타난다.
 
-            $(".btn2").on("click",function(){
-                $(".box").fadeIn(1000,"swing",function(){
-                    $(".btn2").hide();
-                    $(".btn1").show();
-                });
-            });
+            // $(".btn2").on("click",function(){
+            //     $(".box").fadeIn(1000,"swing",function(){
+            //         $(".btn2").hide();
+            //         $(".btn1").show();
+            //     });
+            // });
 
-            $(".btn3").on("click",function(){
-                $(".box").slideToggle(1000,"linear");
-            });
+            // $(".btn3").on("click",function(){
+            //     $(".box").slideToggle(1000,"linear");
+            // });
 
             //slideToggle 버튼을 클릭하면 class값이 box인 요소가 접히거나 펴진다.
 
-            $(".btn4").on("click",function(){
-                $(".box").fadeTo("fast",0.3);
-            });
+            // $(".btn4").on("click",function(){
+            //     $(".box").fadeTo("fast",0.3);
+            // });
 
-            $(".btn5").on("click",function(){
-                $(".box").fadeTo("fast",1);
-            });
+            // $(".btn5").on("click",function(){
+            //     $(".box").fadeTo("fast",1);
+            // });
 
             //fadeTo(0.3)을 클릭하면 class값이 box인 요소가 70% 투명해진다. 다시 클릭하면 투명화가 취소된다.
 
+            // ---------------------------------------------------------------------- 
+
+            $(".btn1").on("click",function(){
+                $(".txt1").animate({marginLeft:"500px",fontSize:"30px"},2000,"linear",function(){
+                    alert("모션완료!");
+                });
+            });  //버튼1을 클릭하면 .txt1이 2초동안 오른쪽 방향으로 500px만큼 이동하고 글자크기가 30px만큼 커진다.
+                 //애니메이션이 완료되면 콜백함수가 실행된다.
+
+            $(".btn2").on("click",function(){
+                $(".txt2").animate({marginLeft:"+=50px"},1000);
+            });  //버튼2를 클릭할 때마다 .txt2가 1초 동안 오른쪽 방향으로 50px씩 이동한다.
+
+            // $(".btn1").off("click");
+            // $(".btn2").off("click");  //이벤트 제거
         });
     </script>
     <style>
-        .content {
+        /* .content {
             width: 400px;
             background-color: pink;
+        } */
+
+        /* ---------------------------------------------------------------------- */
+
+        .txt1 {
+            background-color: aqua;
         }
+        .txt2 {
+            background-color: pink;
+        }
+
     </style>
 </head>
 <body>
-    <p>
+
+    <!-- p.294 -->
+    <p><button class="btn1">버튼1</button></p>
+    <span class="txt1">"500px" 이동</span>
+    <p><button class="btn2">버튼2</button></p>
+    <span class="txt2">"50px" 이동</span>
+
+    <!-- ---------------------------------------------------------------------- -->
+
+
+    <!-- <p>
         <button class="btn1">slideUp</button>
         <button class="btn2">fadeIn</button>
     </p>
@@ -69,6 +104,6 @@
         <div class="content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut......
         </div>
-    </div>
+    </div> -->
 </body>
 </html>
